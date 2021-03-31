@@ -25,6 +25,7 @@
 		47D64DF225F2A194005E976D /* instrumentTunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DF125F2A194005E976D /* instrumentTunnerTests.m */; };
 		47D64DFD25F2A194005E976D /* instrumentTunnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DFC25F2A194005E976D /* instrumentTunnerUITests.m */; };
 		47D64E1725F2A51E005E976D /* audioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64E1625F2A51E005E976D /* audioAnalyzer.m */; };
+		C43FA30DB0C4495605B24B83 /* Pods_instrumentTunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */; };
 		D5D12DE060B94EC8DEDB1797 /* Pods_instrumentTunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18725F3DE7300DCBAF5 /* Pods_instrumentTunnerTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -111,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C43FA30DB0C4495605B24B83 /* Pods_instrumentTunner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,6 +243,7 @@
 				47D64DCF25F2A193005E976D /* Frameworks */,
 				47D64DD025F2A193005E976D /* Resources */,
 				478C992B25F3CE4E0004B04E /* Embed Frameworks */,
+				154BA610C0A8A48CF244D314 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -278,6 +281,7 @@
 				47D64DF425F2A194005E976D /* Sources */,
 				47D64DF525F2A194005E976D /* Frameworks */,
 				47D64DF625F2A194005E976D /* Resources */,
+				7676FBA0DB0ECCC0CE9ECB26 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -359,6 +363,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		154BA610C0A8A48CF244D314 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner/Pods-instrumentTunner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner/Pods-instrumentTunner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner/Pods-instrumentTunner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3D93EE4A815B457BE2E984B6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -401,6 +422,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7676FBA0DB0ECCC0CE9ECB26 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner-instrumentTunnerUITests/Pods-instrumentTunner-instrumentTunnerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner-instrumentTunnerUITests/Pods-instrumentTunner-instrumentTunnerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-instrumentTunner-instrumentTunnerUITests/Pods-instrumentTunner-instrumentTunnerUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9B833B087224EA8B07A89A8A /* [CP] Check Pods Manifest.lock */ = {

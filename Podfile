@@ -5,6 +5,7 @@ target 'instrumentTunner' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'AudioKit', '~> 4.11.1' 
+  pod 'LMGaugeView'
   # Pods for instrumentTunner
 
   target 'instrumentTunnerTests' do

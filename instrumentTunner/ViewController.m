@@ -6,6 +6,7 @@
 //
 
 #import "ViewController.h"
+#import <LMGaugeView.h>
 
 
 @interface ViewController ()
@@ -19,6 +20,10 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [self askPermissionToUseTheMic];
+    CGRect frame = CGRectMake(100, 100, 400, 400);
+    self.gaugeView = [[LMGaugeView alloc] initWithFrame:frame];
+    self.gaugeView.value = 40;
+    [self.view addSubview:self.gaugeView];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

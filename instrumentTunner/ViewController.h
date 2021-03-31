@@ -7,13 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "audioAnalyzer.h"
+#import <LMGaugeView.h>
 #import <AVFoundation/AVFAudio.h>
 
 @interface ViewController : UIViewController
 // Properties
-@property (weak, nonatomic) IBOutlet UILabel *textLabel;
 @property audioAnalyzer *audio;
-@property bool listen;
+@property LMGaugeView *gaugeView;
 
 // Methods
 -(void)askPermissionToUseTheMic;
