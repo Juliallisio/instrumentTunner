@@ -81,21 +81,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRo-PE-zYM">
-                                <rect key="frame" x="176" y="407" width="34" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="DXJ-1l-qdZ" eventType="touchUpInside" id="wjb-Bn-AkQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3qT-Zx-voU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="r7h-4H-Eaj"/>
                     <connections>
-                        <outlet property="startButton" destination="VRo-PE-zYM" id="xMW-8Z-jk0"/>
                         <outlet property="textLabel" destination="XIe-cN-z9f" id="aW4-Qb-Jcq"/>
                     </connections>
                 </viewController>

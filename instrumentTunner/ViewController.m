@@ -9,7 +9,6 @@
 
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
 @end
 
 @implementation ViewController
@@ -19,6 +18,7 @@
 }
 
 - (void)viewDidAppear:(BOOL)animated{
+    [self askPermissionToUseTheMic];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -44,9 +44,6 @@
             }];
             break;
     }
-}
-- (IBAction)startButtonPressed:(id)sender {
-    [self askPermissionToUseTheMic];
 }
 
 -(void)allocAKIfNeededAndStart{
