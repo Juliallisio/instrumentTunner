@@ -26,31 +26,24 @@
 }
 
 - (void)testTones {
-    AKOscillator * oscilator = [[AKOscillator alloc]init];
-    oscilator.amplitude = 0.1;
     // D#0
-    oscilator.frequency = 19.45;
-    [oscilator start];
     [self.audio start];
-    XCTAssertEqualObjects(@"D#0", [self.audio frequencyToNote:oscilator.frequency], @"Program returned the wrong note");
-    NSLog(@"self.audio.tracker.frequency:%@",[self.audio frequencyToNote:oscilator.frequency]);
-    [oscilator stop];
+    XCTAssertEqualObjects(@"D#0", [self.audio frequencyToNote:19.45], @"Program returned the wrong note");
     [self.audio stop];
     // G#2 (A little bit out of tune)
-    oscilator.frequency = 105;
-    [oscilator start];
     [self.audio start];
-    XCTAssertEqualObjects(@"G#2", [self.audio frequencyToNote:oscilator.frequency], @"Program returned the wrong note");
-    NSLog(@"self.audio.tracker.frequency:%@",[self.audio frequencyToNote:oscilator.frequency]);
-    [oscilator stop];
+    XCTAssertEqualObjects(@"G#2", [self.audio frequencyToNote:105], @"Program returned the wrong note");
     [self.audio stop];
     // G3 (Right in the edge between F#3 and G3)
-    oscilator.frequency = 190.5;
-    [oscilator start];
     [self.audio start];
-    XCTAssertEqualObjects(@"G3", [self.audio frequencyToNote:oscilator.frequency], @"Program returned the wrong note");
-    NSLog(@"self.audio.tracker.frequency:%@",[self.audio frequencyToNote:oscilator.frequency]);
-    [oscilator stop];
+    XCTAssertEqualObjects(@"G3", [self.audio frequencyToNote:190.5], @"Program returned the wrong note");
+    [self.audio stop];
+}
+
+- (void)testNoteOutOfRange {
+    // Below C0 (Should return "Note out of range")
+    [self.audio start];
+    XCTAssertEqualObjects(@"Note out of range", [self.audio frequencyToNote:15], @"Program returned the wrong note");
     [self.audio stop];
 }
 

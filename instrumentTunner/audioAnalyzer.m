@@ -58,13 +58,18 @@
 }
 
 - (NSString *)frequencyToNote: (double)freq{
-    NSArray * notes_array = @[@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",@"A",@"A#",@"B"];
-    // 16.35 = frequency of C0
-    int n = round(12*log2(freq/16.35));
-    NSString *note_number = [NSString stringWithFormat:@"%i", (int)(lroundf(n/12))];
-    int arr_position = n%12;
-    NSString *note = [[notes_array objectAtIndex:arr_position] stringByAppendingString:note_number];
-    return note;
+    if (freq >= 16.35){
+        NSArray * notes_array = @[@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",@"A",@"A#",@"B"];
+        // 16.35 = frequency of C0
+        int n = round(12*log2(freq/16.35));
+        NSString *note_number = [NSString stringWithFormat:@"%i", (int)(lroundf(n/12))];
+        int arr_position = n%12;
+        NSString *note = [[notes_array objectAtIndex:arr_position] stringByAppendingString:note_number];
+        return note;
+    }
+    else{
+        return @"Note out of range";
+    }
 }
 
 @end
