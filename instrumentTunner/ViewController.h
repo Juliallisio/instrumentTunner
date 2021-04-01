@@ -13,7 +13,8 @@
 @interface ViewController : UIViewController
 // Properties
 @property audioAnalyzer *audio;
-@property LMGaugeView *gaugeView;
+@property LMGaugeView *gauge;
+@property (weak, nonatomic) IBOutlet UIView *gaugeConstrains;
 
 // Methods
 -(void)askPermissionToUseTheMic;

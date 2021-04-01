@@ -6,7 +6,6 @@
 //
 
 #import "ViewController.h"
-#import <LMGaugeView.h>
 
 
 @interface ViewController ()
@@ -20,10 +19,10 @@
 
 - (void)viewDidAppear:(BOOL)animated{
     [self askPermissionToUseTheMic];
-    CGRect frame = CGRectMake(100, 100, 400, 400);
-    self.gaugeView = [[LMGaugeView alloc] initWithFrame:frame];
-    self.gaugeView.value = 40;
-    [self.view addSubview:self.gaugeView];
+    self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
+    self.gauge.maxValue = 5000;
+    self.gauge.decimalFormat = TRUE;
+    [self.view addSubview:self.gauge];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{
@@ -51,12 +50,22 @@
     }
 }
 
+-(void)updateGauge{
+    dispatch_async(dispatch_get_main_queue(), ^{
+        while(self.audio.listen){
+            self.gauge.value = self.audio.tracker.frequency;
+            [self.view setNeedsDisplay];
+        }
+    });
+}
+
 -(void)allocAKIfNeededAndStart{
     if(self.audio == nil){
         self.audio = [[audioAnalyzer alloc]init];
     }
     [self.audio start];
     [self.audio listenToMic];
+    [self updateGauge];
 }
 @end
 
