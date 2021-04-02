@@ -15,9 +15,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-}
-
-- (void)viewDidAppear:(BOOL)animated{
     [self askPermissionToUseTheMic];
     self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
     self.gauge.maxValue = 5000;
@@ -25,7 +22,9 @@
     [self.view addSubview:self.gauge];
 }
 
+
 -(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:TRUE];
     [self.audio stop];
 }
 
@@ -50,11 +49,16 @@
     }
 }
 
+
 -(void)updateGauge{
     dispatch_async(dispatch_get_main_queue(), ^{
         while(self.audio.listen){
-            self.gauge.value = self.audio.tracker.frequency;
-            [self.view setNeedsDisplay];
+            if(self.audio.tracker.amplitude > 0.01){
+                self.gauge.value = self.audio.tracker.frequency;
+                NSLog(@"self.audio.tracker.frequency:%f",self.gauge.value);
+                [self.gaugeConstrains setNeedsDisplay];
+                [self.gaugeConstrains layoutIfNeeded];
+            }
         }
     });
 }

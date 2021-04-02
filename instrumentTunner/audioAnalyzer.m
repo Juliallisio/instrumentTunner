@@ -47,7 +47,7 @@
     [self.tracker start];
 }
 
-- (void)listenToMic {
+-(void)listenToMic{
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
         while(self.listen){
             if(self.tracker.amplitude > 0.01){

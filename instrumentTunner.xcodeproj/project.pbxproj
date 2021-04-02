@@ -6,6 +6,20 @@
 	objectVersion = 52;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		47CAFF0526173D4E00EC4C38 /* OCLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 47CAFF0826173D4E00EC4C38 /* Build configuration list for PBXAggregateTarget "OCLint" */;
+			buildPhases = (
+				47CAFF0C26173D5400EC4C38 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = OCLint;
+			productName = OCLint;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		4700B18625F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		47283F05260375F0006EA330 /* selectionScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 47283F04260375F0006EA330 /* selectionScreen.m */; };
@@ -301,6 +315,9 @@
 			attributes = {
 				LastUpgradeCheck = 1240;
 				TargetAttributes = {
+					47CAFF0526173D4E00EC4C38 = {
+						CreatedOnToolsVersion = 12.4;
+					};
 					47D64DD125F2A193005E976D = {
 						CreatedOnToolsVersion = 12.4;
 						LastSwiftMigration = 1240;
@@ -331,6 +348,7 @@
 				47D64DD125F2A193005E976D /* instrumentTunner */,
 				47D64DEC25F2A194005E976D /* instrumentTunnerTests */,
 				47D64DF725F2A194005E976D /* instrumentTunnerUITests */,
+				47CAFF0526173D4E00EC4C38 /* OCLint */,
 			);
 		};
 /* End PBXProject section */
@@ -401,6 +419,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		47CAFF0C26173D5400EC4C38 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Building ${TARGET_NAME}\"\nmaxPriority=15000\n#Add OCLint bin directory to PATH\nexport PATH=/usr/local/Cellar/oclint/0.10.2/bin:$PATH\n#Set Build path\nBUILD_PATH=${TARGET_TEMP_DIR}\n#Check whether OCLint exists or not\nhash oclint &> /dev/null\nif [ $? -eq 1 ]; then\necho \"OCLint not found, analyzing stopped\"\nexit 1\nelse\necho \"OCLint is installed\"\nfi\n#Navigate to build path directory\ncd ${BUILD_PATH}\n\nif [ ! -f compile_commands.json ]; then\necho \"compile_commands.json not found, possibly clean was performed\";\nelse\necho \"Removing compile_commands.json\"\nrm compile_commands.json\nfi\n# clean previous output\nif [ -f xcodebuild.log ]; then\necho \"Removing xcodebuild.log\"\nrm xcodebuild.log\nfi\n\ncd ${SRCROOT}\n\n#Clean, Build and generate compile_commands.json project\nxctool -project DemoOCLintTargetInProject.xcodeproj \\\n-configuration Debug -scheme DemoOCLintTargetInProject \\\n-sdk iphonesimulator  \\\n-reporter json-compilation-database:${BUILD_PATH}/compile_commands.json clean build\n\necho \"Starting analyzing\"\ncd ${BUILD_PATH}\noclint-json-compilation-database -v -e Pods oclint_args \\\n\"-max-priority-1=$maxPriority -max-priority-2=$maxPriority \\\n-max-priority-3=$maxPriority -rc LONG_LINE=500 \\\n-rc LONG_VARIABLE_NAME=100  -disable-rule=UnusedMethodParameter\" \\\n| sed 's/\\(.*\\.\\m\\{1,2\\}:[0-9]*:[0-9]*:\\)/\\1 warning:/'\n";
 		};
 		51953979C962696CD5FAF01D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -533,6 +568,24 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		47CAFF0626173D4E00EC4C38 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 765BB9ZL75;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		47CAFF0726173D4E00EC4C38 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 765BB9ZL75;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		47D64DFF25F2A194005E976D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -799,6 +852,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		47CAFF0826173D4E00EC4C38 /* Build configuration list for PBXAggregateTarget "OCLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				47CAFF0626173D4E00EC4C38 /* Debug */,
+				47CAFF0726173D4E00EC4C38 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		47D64DCD25F2A193005E976D /* Build configuration list for PBXProject "instrumentTunner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
