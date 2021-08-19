@@ -20,6 +20,10 @@
     self.gauge.maxValue = 5000;
     self.gauge.decimalFormat = TRUE;
     [self.view addSubview:self.gauge];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+            selector:@selector(updateGauge)
+            name:@"UpdateGauge"
+            object:nil];
 }
 
 
@@ -51,7 +55,7 @@
 
 
 -(void)updateGauge{
-
+    self.gauge.value = self.audio.tracker.frequency;
 }
 
 -(void)allocAKIfNeededAndStart{
@@ -60,7 +64,6 @@
     }
     [self.audio start];
     [self.audio listenToMic];
-    [self updateGauge];
 }
 @end
 

@@ -18,6 +18,7 @@
 
 // Methods
 -(void)askPermissionToUseTheMic;
+-(void)updateGauge;
 
 @end
 

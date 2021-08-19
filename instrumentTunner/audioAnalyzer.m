@@ -41,7 +41,7 @@
 }
 
 -(void)start{
-    [NSTimer scheduledTimerWithTimeInterval:0.1
+    [NSTimer scheduledTimerWithTimeInterval:0.01
         target:self
         selector:@selector(listenToMic)
         userInfo:nil
@@ -52,8 +52,11 @@
 }
 
 -(void)listenToMic{
-    if(self.tracker.amplitude > 0.01){
+    if(self.tracker.amplitude > 0.005){
         NSLog(@"self.audio.tracker.frequency:%@",[self frequencyToNote:self.tracker.frequency]);
+        [[NSNotificationCenter defaultCenter]
+                postNotificationName:@"UpdateGauge"
+                object:self];
     }
 }
 
