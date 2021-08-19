@@ -27,7 +27,6 @@
     [AKManager setInputDevice:(AKDevice *)[AKManager.inputDevices objectAtIndex:0] error:NULL];
     [AKManager setOutputDevice:(AKDevice *)[AKManager.outputDevices objectAtIndex:0] error:NULL];
     AKManager.output = self.silence;
-    
     return self;
 }
 
@@ -42,19 +41,20 @@
 }
 
 -(void)start{
+    [NSTimer scheduledTimerWithTimeInterval:0.1
+        target:self
+        selector:@selector(listenToMic)
+        userInfo:nil
+        repeats:YES];
     [AKManager startAndReturnError:NULL];
     [self.mic start];
     [self.tracker start];
 }
 
 -(void)listenToMic{
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
-        while(self.listen){
-            if(self.tracker.amplitude > 0.01){
-                NSLog(@"self.audio.tracker.frequency:%@",[self frequencyToNote:self.tracker.frequency]);
-            }
-        }
-    });
+    if(self.tracker.amplitude > 0.01){
+        NSLog(@"self.audio.tracker.frequency:%@",[self frequencyToNote:self.tracker.frequency]);
+    }
 }
 
 - (NSString *)frequencyToNote: (double)freq{

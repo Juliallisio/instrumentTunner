@@ -51,16 +51,7 @@
 
 
 -(void)updateGauge{
-    dispatch_async(dispatch_get_main_queue(), ^{
-        while(self.audio.listen){
-            if(self.audio.tracker.amplitude > 0.01){
-                self.gauge.value = self.audio.tracker.frequency;
-                NSLog(@"self.audio.tracker.frequency:%f",self.gauge.value);
-                [self.gaugeConstrains setNeedsDisplay];
-                [self.gaugeConstrains layoutIfNeeded];
-            }
-        }
-    });
+
 }
 
 -(void)allocAKIfNeededAndStart{
