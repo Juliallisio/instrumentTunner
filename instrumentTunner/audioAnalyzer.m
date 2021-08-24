@@ -58,6 +58,7 @@
                 postNotificationName:@"UpdateGauge"
                 object:self];
     }
+
 }
 
 - (NSString *)frequencyToNote: (double)freq{

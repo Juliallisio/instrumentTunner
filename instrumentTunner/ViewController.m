@@ -16,9 +16,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self askPermissionToUseTheMic];
-    self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
-    self.gauge.maxValue = 5000;
-    self.gauge.decimalFormat = TRUE;
+    //self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
+    self.gauge = [[GaugeSliderView alloc]init];
+    self.gauge.fillPathColor = [UIColor clearColor];
+    self.gauge.placeholder = @"";
+    [self.gauge setFrame: self.gaugeConstrains.frame];
     [self.view addSubview:self.gauge];
     [[NSNotificationCenter defaultCenter] addObserver:self
             selector:@selector(updateGauge)

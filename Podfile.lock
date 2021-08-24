@@ -5,21 +5,21 @@ PODS:
   - AudioKit/Core (4.11.2)
   - AudioKit/UI (4.11.2):
     - AudioKit/Core
-  - LMGaugeView (1.0.5)
+  - GaugeSlider (1.0.1)
 
 DEPENDENCIES:
   - AudioKit (~> 4.11.1)
-  - LMGaugeView
+  - GaugeSlider (~> 1.0.1)
 
 SPEC REPOS:
   trunk:
     - AudioKit
-    - LMGaugeView
+    - GaugeSlider
 
 SPEC CHECKSUMS:
   AudioKit: 57cc61d708f085763a031e5c3f87adae21dc4b59
-  LMGaugeView: fe0dd33c201388ba9271548d6e026ddde3b3d3a2
+  GaugeSlider: 8899c41e6e74e5235acecbb7580deaba66be3ecb
 
-PODFILE CHECKSUM: 892c7e99355159b485cd9ad5f90e713e030ccc4d
+PODFILE CHECKSUM: 8be43edcc9126024b78d745374502b0c4d012a4d
 
 COCOAPODS: 1.10.1
