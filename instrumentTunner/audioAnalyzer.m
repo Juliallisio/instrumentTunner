@@ -41,7 +41,7 @@
 }
 
 -(void)start{
-    [NSTimer scheduledTimerWithTimeInterval:0.01
+    [NSTimer scheduledTimerWithTimeInterval:0.1
         target:self
         selector:@selector(listenToMic)
         userInfo:nil

@@ -22,6 +22,7 @@
     self.gauge.placeholder = @"";
     self.gauge.minValue = -50;
     self.gauge.maxValue = 50;
+    //self.gauge.countingMethod = GaugeSliderCountingMethod.easeInOut;
     [self.gauge setFrame: self.gaugeConstrains.frame];
     [self.view addSubview:self.gauge];
     [[NSNotificationCenter defaultCenter] addObserver:self
