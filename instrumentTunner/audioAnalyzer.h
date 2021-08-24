@@ -15,6 +15,7 @@
 @property AKFrequencyTracker *tracker;
 @property AKBooster *silence;
 @property bool listen;
+@property double percentage;
 
 // Methods
 -(id)init;

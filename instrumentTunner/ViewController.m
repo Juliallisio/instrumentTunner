@@ -20,6 +20,8 @@
     self.gauge = [[GaugeSliderView alloc]init];
     self.gauge.fillPathColor = [UIColor clearColor];
     self.gauge.placeholder = @"";
+    self.gauge.minValue = -50;
+    self.gauge.maxValue = 50;
     [self.gauge setFrame: self.gaugeConstrains.frame];
     [self.view addSubview:self.gauge];
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -57,7 +59,7 @@
 
 
 -(void)updateGauge{
-    self.gauge.value = self.audio.tracker.frequency;
+    self.gauge.value = self.audio.percentage;
 }
 
 -(void)allocAKIfNeededAndStart{
