@@ -15,6 +15,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[self navigationController]setNavigationBarHidden:true];
     [self askPermissionToUseTheMic];
     self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
     //self.gauge.fillPathColor = [UIColor clearColor];

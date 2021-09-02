@@ -22,7 +22,6 @@
 
 /* Begin PBXBuildFile section */
 		32B9F516574A5D306795B949 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9C330CA6316D1C56679010 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */; };
-		47283F05260375F0006EA330 /* selectionScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 47283F04260375F0006EA330 /* selectionScreen.m */; };
 		478A5FBD25F3E5BD0042588F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A5FBC25F3E5BD0042588F /* File.swift */; };
 		478C994B25F3DD580004B04E /* AudioKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994925F3DD580004B04E /* AudioKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		478C995025F3DD790004B04E /* AudioKitUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994E25F3DD790004B04E /* AudioKitUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -78,8 +77,6 @@
 		2434D67D2F4FE3418BF8D509 /* Pods-instrumentTunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunnerTests.release.xcconfig"; path = "Target Support Files/Pods-instrumentTunnerTests/Pods-instrumentTunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instrumentTunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4700B1A225F3E08D00DCBAF5 /* instrumentTunner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = instrumentTunner; sourceTree = "<group>"; };
-		47283F03260375E0006EA330 /* selectionScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = selectionScreen.h; sourceTree = "<group>"; };
-		47283F04260375F0006EA330 /* selectionScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = selectionScreen.m; sourceTree = "<group>"; };
 		478A5FBB25F3E5BD0042588F /* instrumentTunner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instrumentTunner-Bridging-Header.h"; sourceTree = "<group>"; };
 		478A5FBC25F3E5BD0042588F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		478C993025F3CEC00004B04E /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioKit; path = Pods/AudioKit; sourceTree = "<group>"; };
@@ -187,8 +184,6 @@
 				47D64DE325F2A194005E976D /* LaunchScreen.storyboard */,
 				47D64DE625F2A194005E976D /* Info.plist */,
 				47D64DE725F2A194005E976D /* main.m */,
-				47283F03260375E0006EA330 /* selectionScreen.h */,
-				47283F04260375F0006EA330 /* selectionScreen.m */,
 			);
 			path = instrumentTunner;
 			sourceTree = "<group>";
@@ -508,7 +503,6 @@
 				47D64DD725F2A193005E976D /* AppDelegate.m in Sources */,
 				47D64E1725F2A51E005E976D /* audioAnalyzer.m in Sources */,
 				47D64DE825F2A194005E976D /* main.m in Sources */,
-				47283F05260375F0006EA330 /* selectionScreen.m in Sources */,
 				47D64DDA25F2A193005E976D /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

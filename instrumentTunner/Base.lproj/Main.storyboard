@@ -17,77 +17,30 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="Mlh-BU-84k" kind="relationship" relationship="rootViewController" id="wMe-1O-cyl"/>
-                        <segue destination="DXJ-1l-qdZ" kind="show" identifier="toTuningScreen" id="vI5-7x-TXq"/>
+                        <segue destination="DXJ-1l-qdZ" kind="relationship" relationship="rootViewController" id="d3v-b2-esg"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFo-uB-0OU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="41"/>
-        </scene>
-        <!--Selection Screen-->
-        <scene sceneID="Mfy-QZ-vMG">
-            <objects>
-                <viewController id="Mlh-BU-84k" customClass="selectionScreen" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="hnZ-Us-1Zu">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hiq-tG-ddw">
-                                <rect key="frame" x="0.0" y="186" width="320" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                            </pickerView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i8x-y0-yDv">
-                                <rect key="frame" x="137" y="394" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="Mlh-BU-84k" eventType="touchUpInside" id="CvQ-8o-yFh"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fdx-L1-P7Y">
-                                <rect key="frame" x="93" y="140" width="132" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
-                                <attributedString key="attributedText">
-                                    <fragment content="Select instrument">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Avenir-Book"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="vFU-Ie-m2p"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="dV7-qD-a98"/>
-                    <connections>
-                        <outlet property="instrumentPicker" destination="hiq-tG-ddw" id="pkE-Jj-oyE"/>
-                        <outlet property="startButton" destination="i8x-y0-yDv" id="TCz-LV-93P"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hDW-Nj-hk9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="911.25" y="330.63380281690144"/>
+            <point key="canvasLocation" x="-47" y="-383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="z5J-8J-7xa">
             <objects>
                 <viewController id="DXJ-1l-qdZ" customClass="ViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rtc-aX-XvP">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view autoresizesSubviews="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="WlU-zp-CNr">
-                                <rect key="frame" x="40" y="142" width="240" height="265"/>
+                                <rect key="frame" x="40" y="152" width="240" height="265"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3qT-Zx-voU"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="r7h-4H-Eaj"/>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="r7h-4H-Eaj"/>
                     <connections>
                         <outlet property="gaugeConstrains" destination="WlU-zp-CNr" id="hHr-1I-nAx"/>
                     </connections>
