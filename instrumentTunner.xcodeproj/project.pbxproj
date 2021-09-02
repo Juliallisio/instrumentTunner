@@ -21,9 +21,8 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		4700B18625F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		32B9F516574A5D306795B949 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9C330CA6316D1C56679010 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */; };
 		47283F05260375F0006EA330 /* selectionScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = 47283F04260375F0006EA330 /* selectionScreen.m */; };
-		4752DF3A84967C892CBD90F8 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18125F3DE6C00DCBAF5 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */; };
 		478A5FBD25F3E5BD0042588F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A5FBC25F3E5BD0042588F /* File.swift */; };
 		478C994B25F3DD580004B04E /* AudioKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994925F3DD580004B04E /* AudioKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		478C995025F3DD790004B04E /* AudioKitUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994E25F3DD790004B04E /* AudioKitUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -39,8 +38,8 @@
 		47D64DF225F2A194005E976D /* instrumentTunnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DF125F2A194005E976D /* instrumentTunnerTests.m */; };
 		47D64DFD25F2A194005E976D /* instrumentTunnerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DFC25F2A194005E976D /* instrumentTunnerUITests.m */; };
 		47D64E1725F2A51E005E976D /* audioAnalyzer.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64E1625F2A51E005E976D /* audioAnalyzer.m */; };
-		C43FA30DB0C4495605B24B83 /* Pods_instrumentTunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */; };
-		D5D12DE060B94EC8DEDB1797 /* Pods_instrumentTunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4700B18725F3DE7300DCBAF5 /* Pods_instrumentTunnerTests.framework */; };
+		6C68C4E651CEC730E112D1D8 /* Pods_instrumentTunnerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */; };
+		D220A21A65C194E8BC0C3845 /* Pods_instrumentTunner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86E661AB6B837E72EB700940 /* Pods_instrumentTunner.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +67,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				478C995025F3DD790004B04E /* AudioKitUI.xcframework in Embed Frameworks */,
-				4700B18625F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework in Embed Frameworks */,
 				478C994B25F3DD580004B04E /* AudioKit.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -78,9 +76,7 @@
 
 /* Begin PBXFileReference section */
 		2434D67D2F4FE3418BF8D509 /* Pods-instrumentTunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunnerTests.release.xcconfig"; path = "Target Support Files/Pods-instrumentTunnerTests/Pods-instrumentTunnerTests.release.xcconfig"; sourceTree = "<group>"; };
-		4700B18125F3DE6C00DCBAF5 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_instrumentTunner_instrumentTunnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_instrumentTunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4700B18725F3DE7300DCBAF5 /* Pods_instrumentTunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_instrumentTunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instrumentTunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4700B1A225F3E08D00DCBAF5 /* instrumentTunner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = instrumentTunner; sourceTree = "<group>"; };
 		47283F03260375E0006EA330 /* selectionScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = selectionScreen.h; sourceTree = "<group>"; };
 		47283F04260375F0006EA330 /* selectionScreen.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = selectionScreen.m; sourceTree = "<group>"; };
@@ -115,10 +111,12 @@
 		47D64E0D25F2A29D005E976D /* audioAnalyzer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audioAnalyzer.h; sourceTree = "<group>"; };
 		47D64E1625F2A51E005E976D /* audioAnalyzer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = audioAnalyzer.m; sourceTree = "<group>"; };
 		51AE93CC877E3E61B8ECDF11 /* Pods-instrumentTunner-instrumentTunnerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunner-instrumentTunnerUITests.debug.xcconfig"; path = "Target Support Files/Pods-instrumentTunner-instrumentTunnerUITests/Pods-instrumentTunner-instrumentTunnerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		86E661AB6B837E72EB700940 /* Pods_instrumentTunner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instrumentTunner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E3E42F3D715F37EE3CED426 /* Pods-instrumentTunner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunner.debug.xcconfig"; path = "Target Support Files/Pods-instrumentTunner/Pods-instrumentTunner.debug.xcconfig"; sourceTree = "<group>"; };
 		BD9878378522843E9D4C9319 /* Pods-instrumentTunnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunnerTests.debug.xcconfig"; path = "Target Support Files/Pods-instrumentTunnerTests/Pods-instrumentTunnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C423B127456FC3FAE1E248C1 /* Pods-instrumentTunner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunner.release.xcconfig"; path = "Target Support Files/Pods-instrumentTunner/Pods-instrumentTunner.release.xcconfig"; sourceTree = "<group>"; };
 		E3540630AA1CCBD1F404CBFF /* Pods-instrumentTunner-instrumentTunnerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunner-instrumentTunnerUITests.release.xcconfig"; path = "Target Support Files/Pods-instrumentTunner-instrumentTunnerUITests/Pods-instrumentTunner-instrumentTunnerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FC9C330CA6316D1C56679010 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instrumentTunner_instrumentTunnerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C43FA30DB0C4495605B24B83 /* Pods_instrumentTunner.framework in Frameworks */,
+				D220A21A65C194E8BC0C3845 /* Pods_instrumentTunner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5D12DE060B94EC8DEDB1797 /* Pods_instrumentTunnerTests.framework in Frameworks */,
+				6C68C4E651CEC730E112D1D8 /* Pods_instrumentTunnerTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4752DF3A84967C892CBD90F8 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */,
+				32B9F516574A5D306795B949 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,9 +228,6 @@
 			isa = PBXGroup;
 			children = (
 				4700B1A225F3E08D00DCBAF5 /* instrumentTunner */,
-				4700B18725F3DE7300DCBAF5 /* Pods_instrumentTunnerTests.framework */,
-				4700B18425F3DE6F00DCBAF5 /* Pods_instrumentTunner.framework */,
-				4700B18125F3DE6C00DCBAF5 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */,
 				478C995325F3DDAB0004B04E /* Pods-instrumentTunner */,
 				478C994E25F3DD790004B04E /* AudioKitUI.xcframework */,
 				478C994925F3DD580004B04E /* AudioKit.xcframework */,
@@ -241,6 +236,9 @@
 				478C994225F3DD430004B04E /* AudioKit.framework */,
 				478C993025F3CEC00004B04E /* AudioKit */,
 				478C993125F3CEFD0004B04E /* AudioKit */,
+				86E661AB6B837E72EB700940 /* Pods_instrumentTunner.framework */,
+				FC9C330CA6316D1C56679010 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */,
+				2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

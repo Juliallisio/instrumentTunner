@@ -7,13 +7,13 @@
 
 #import <UIKit/UIKit.h>
 #import "audioAnalyzer.h"
-#import <GaugeSlider/GaugeSlider-Swift.h>
+#import <LMGaugeView.h>
 #import <AVFoundation/AVFAudio.h>
 
 @interface ViewController : UIViewController
 // Properties
 @property audioAnalyzer *audio;
-@property GaugeSliderView *gauge;
+@property LMGaugeView *gauge;
 @property (weak, nonatomic) IBOutlet UIView *gaugeConstrains;
 
 // Methods

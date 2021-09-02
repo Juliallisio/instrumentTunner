@@ -16,6 +16,7 @@
 @property AKBooster *silence;
 @property bool listen;
 @property double percentage;
+@property NSString *note;
 
 // Methods
 -(id)init;

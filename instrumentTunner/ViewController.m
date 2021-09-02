@@ -16,14 +16,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self askPermissionToUseTheMic];
-    //self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
-    self.gauge = [[GaugeSliderView alloc]init];
-    self.gauge.fillPathColor = [UIColor clearColor];
-    self.gauge.placeholder = @"";
+    self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
+    //self.gauge.fillPathColor = [UIColor clearColor];
+    self.gauge.valueLabel.text = @"";
+    self.gauge.valueFont = [UIFont fontWithName:@"Avenir" size:40];
     self.gauge.minValue = -50;
     self.gauge.maxValue = 50;
-    //self.gauge.countingMethod = GaugeSliderCountingMethod.easeInOut;
-    [self.gauge setFrame: self.gaugeConstrains.frame];
+    self.gauge.showMinMaxValue = false;
+    self.gauge.showUnitOfMeasurement = false;
     [self.view addSubview:self.gauge];
     [[NSNotificationCenter defaultCenter] addObserver:self
             selector:@selector(updateGauge)
@@ -60,7 +60,14 @@
 
 
 -(void)updateGauge{
+    if(fabs(self.audio.percentage) < 5){
+        self.gauge.progressLayer.strokeColor = [UIColor greenColor].CGColor;
+    }
+    else{
+        self.gauge.progressLayer.strokeColor  = [UIColor redColor].CGColor;
+    }
     self.gauge.value = self.audio.percentage;
+    self.gauge.valueLabel.text = self.audio.note;
 }
 
 -(void)allocAKIfNeededAndStart{

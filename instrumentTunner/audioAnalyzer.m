@@ -55,7 +55,7 @@
     if(self.tracker.amplitude > 0.005){
         float n = 12*log2(self.tracker.frequency/16.35);
         self.percentage = 100*(n - round(n));
-        NSLog(@"self.audio.tracker.frequency:%@",[self frequencyToNote:self.tracker.frequency]);
+        self.note = [self frequencyToNote:self.tracker.frequency];
         [[NSNotificationCenter defaultCenter]
                 postNotificationName:@"UpdateGauge"
                 object:self];
