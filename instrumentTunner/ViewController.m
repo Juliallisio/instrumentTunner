@@ -18,9 +18,10 @@
     [[self navigationController]setNavigationBarHidden:true];
     [self askPermissionToUseTheMic];
     self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
-    //self.gauge.fillPathColor = [UIColor clearColor];
     self.gauge.valueLabel.text = @"";
     self.gauge.valueFont = [UIFont fontWithName:@"Avenir" size:40];
+    self.gauge.valueTextColor = [UIColor whiteColor];
+    self.gauge.ringBackgroundColor = [UIColor grayColor];
     self.gauge.minValue = -50;
     self.gauge.maxValue = 50;
     self.gauge.showMinMaxValue = false;

@@ -19,7 +19,7 @@
 -(id)init{
     self.listen = TRUE;
     // Figure out how to detect sample rate
-    AVAudioFormat *newFormat = [[AVAudioFormat alloc]initStandardFormatWithSampleRate:32000 channels:1];
+    AVAudioFormat *newFormat = [[AVAudioFormat alloc]initStandardFormatWithSampleRate:[[AVAudioSession sharedInstance]sampleRate] channels:1];
     self.mic = [[AKMicrophone alloc]initWith:newFormat];
     self.tracker = [[AKFrequencyTracker alloc]init:self.mic hopSize:4096.0 peakCount:200];
     self.silence = [[AKBooster alloc]init:self.tracker gain:0];
@@ -52,7 +52,7 @@
 }
 
 -(void)listenToMic{
-    if(self.tracker.amplitude > 0.005){
+    if(self.tracker.amplitude > 0.02){
         float n = 12*log2(self.tracker.frequency/16.35);
         self.percentage = 100*(n - round(n));
         self.note = [self frequencyToNote:self.tracker.frequency];
