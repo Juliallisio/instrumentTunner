@@ -17,16 +17,10 @@
     [super viewDidLoad];
     [[self navigationController]setNavigationBarHidden:true];
     [self askPermissionToUseTheMic];
-    self.gauge = [[LMGaugeView alloc]initWithFrame:self.gaugeConstrains.frame];
-    self.gauge.valueLabel.text = @"";
-    self.gauge.valueFont = [UIFont fontWithName:@"Avenir" size:40];
-    self.gauge.valueTextColor = [UIColor whiteColor];
-    self.gauge.ringBackgroundColor = [UIColor grayColor];
-    self.gauge.minValue = -50;
-    self.gauge.maxValue = 50;
-    self.gauge.showMinMaxValue = false;
-    self.gauge.showUnitOfMeasurement = false;
-    [self.view addSubview:self.gauge];
+    self.red_dot_low_note.hidden = true;
+    self.red_dot_high_note.hidden = true;
+    self.note_label.text = @"";
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
             selector:@selector(updateGauge)
             name:@"UpdateGauge"
@@ -62,14 +56,23 @@
 
 
 -(void)updateGauge{
-    if(fabs(self.audio.percentage) < 5){
-        self.gauge.progressLayer.strokeColor = [UIColor greenColor].CGColor;
+    if(fabs(self.audio.percentage) < 10){
+        self.red_dot_low_note.hidden = true;
+        self.red_dot_high_note.hidden = true;
+        self.note_label.textColor = [UIColor greenColor];
     }
     else{
-        self.gauge.progressLayer.strokeColor  = [UIColor redColor].CGColor;
+        self.note_label.textColor = [UIColor grayColor];
+        if(self.audio.percentage < 5){
+            self.red_dot_low_note.hidden = false;
+            self.red_dot_high_note.hidden = true;
+        }
+        else{
+            self.red_dot_low_note.hidden = true;
+            self.red_dot_high_note.hidden = false;
+        }
     }
-    self.gauge.value = self.audio.percentage;
-    self.gauge.valueLabel.text = self.audio.note;
+    self.note_label.text = self.audio.note;
 }
 
 -(void)allocAKIfNeededAndStart{

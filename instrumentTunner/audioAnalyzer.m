@@ -52,7 +52,7 @@
 }
 
 -(void)listenToMic{
-    if(self.tracker.amplitude > 0.02){
+    if(self.tracker.amplitude > 0.1){
         float n = 12*log2(self.tracker.frequency/16.35);
         self.percentage = 100*(n - round(n));
         self.note = [self frequencyToNote:self.tracker.frequency];

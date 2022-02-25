@@ -7,14 +7,14 @@
 
 #import <UIKit/UIKit.h>
 #import "audioAnalyzer.h"
-#import <LMGaugeView.h>
 #import <AVFoundation/AVFAudio.h>
 
 @interface ViewController : UIViewController
 // Properties
 @property audioAnalyzer *audio;
-@property LMGaugeView *gauge;
-@property (weak, nonatomic) IBOutlet UIView *gaugeConstrains;
+@property (weak, nonatomic) IBOutlet UIImageView *red_dot_low_note;
+@property (weak, nonatomic) IBOutlet UIImageView *red_dot_high_note;
+@property (weak, nonatomic) IBOutlet UILabel *note_label;
 
 // Methods
 -(void)askPermissionToUseTheMic;
