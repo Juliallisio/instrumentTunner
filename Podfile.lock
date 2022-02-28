@@ -5,21 +5,17 @@ PODS:
   - AudioKit/Core (4.11.2)
   - AudioKit/UI (4.11.2):
     - AudioKit/Core
-  - LMGaugeView (1.0.5)
 
 DEPENDENCIES:
   - AudioKit (~> 4.11.1)
-  - LMGaugeView
 
 SPEC REPOS:
   trunk:
     - AudioKit
-    - LMGaugeView
 
 SPEC CHECKSUMS:
   AudioKit: 57cc61d708f085763a031e5c3f87adae21dc4b59
-  LMGaugeView: fe0dd33c201388ba9271548d6e026ddde3b3d3a2
 
-PODFILE CHECKSUM: 892c7e99355159b485cd9ad5f90e713e030ccc4d
+PODFILE CHECKSUM: 724d403f107ac97a6a04e0829873d4978c2cbf31
 
-COCOAPODS: 1.10.1
+COCOAPODS: 1.11.2

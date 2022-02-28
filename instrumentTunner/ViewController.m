@@ -19,7 +19,7 @@
     [self askPermissionToUseTheMic];
     self.red_dot_low_note.hidden = true;
     self.red_dot_high_note.hidden = true;
-    self.note_label.text = @"";
+    self.note_label.text = @"n/a";
     
     [[NSNotificationCenter defaultCenter] addObserver:self
             selector:@selector(updateGauge)
