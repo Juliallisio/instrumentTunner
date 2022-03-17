@@ -6,12 +6,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "audioAnalyzer.h"
+#import "AudioAnalyzer.h"
 #import <AVFoundation/AVFAudio.h>
 
 @interface ViewController : UIViewController
 // Properties
-@property audioAnalyzer *audio;
+@property AudioAnalyzer *audio;
 @property (weak, nonatomic) IBOutlet UIImageView *red_dot_low_note;
 @property (weak, nonatomic) IBOutlet UIImageView *red_dot_high_note;
 @property (weak, nonatomic) IBOutlet UILabel *note_label;

@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 #import <AudioKit/AudioKit.h>
 
-@interface audioAnalyzer: NSObject
+@interface AudioAnalyzer: NSObject
 
 // Properties
 @property AKMicrophone *mic;

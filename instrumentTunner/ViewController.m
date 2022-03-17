@@ -36,7 +36,7 @@
 -(void) askPermissionToUseTheMic{
     switch ([[AVAudioSession sharedInstance] recordPermission]) {
         case AVAudioSessionRecordPermissionGranted:
-            [self allocAKIfNeededAndStart];
+            self.audio = [[AudioAnalyzer alloc] init];
             break;
         case AVAudioSessionRecordPermissionDenied:
 
@@ -45,7 +45,7 @@
             [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {
                 if (granted) {
                     NSLog(@"granted");
-                    [self allocAKIfNeededAndStart];
+                    self.audio = [[AudioAnalyzer alloc] init];
                 } else {
                     NSLog(@"denied");
                 }
@@ -75,12 +75,5 @@
     self.note_label.text = self.audio.note;
 }
 
--(void)allocAKIfNeededAndStart{
-    if(self.audio == nil){
-        self.audio = [[audioAnalyzer alloc]init];
-    }
-    [self.audio start];
-    [self.audio listenToMic];
-}
 @end
 

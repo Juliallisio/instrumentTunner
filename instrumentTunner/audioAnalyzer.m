@@ -5,20 +5,20 @@
 //  Created by Julian Allisio on 05/03/2021.
 //
 
-#import "audioAnalyzer.h"
+#import "AudioAnalyzer.h"
 #import <AudioKit/AudioKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <math.h>
 
 
-@interface audioAnalyzer ()
+@interface AudioAnalyzer ()
 @end
 
-@implementation audioAnalyzer
+@implementation AudioAnalyzer
 
 -(id)init{
+    
     self.listen = TRUE;
-    // Figure out how to detect sample rate
     AVAudioFormat *newFormat = [[AVAudioFormat alloc]initStandardFormatWithSampleRate:[[AVAudioSession sharedInstance]sampleRate] channels:1];
     self.mic = [[AKMicrophone alloc]initWith:newFormat];
     self.tracker = [[AKFrequencyTracker alloc]init:self.mic hopSize:4096.0 peakCount:200];
@@ -27,10 +27,12 @@
     [AKManager setInputDevice:(AKDevice *)[AKManager.inputDevices objectAtIndex:0] error:NULL];
     [AKManager setOutputDevice:(AKDevice *)[AKManager.outputDevices objectAtIndex:0] error:NULL];
     AKManager.output = self.silence;
+    [self start];
     return self;
 }
 
 -(id)deinit{
+    [self stop];
     return self;
 }
 
@@ -42,28 +44,30 @@
 
 -(void)start{
     [NSTimer scheduledTimerWithTimeInterval:0.1
-        target:self
-        selector:@selector(listenToMic)
-        userInfo:nil
-        repeats:YES];
+                                     target:self
+                                   selector:@selector(listenToMic)
+                                   userInfo:nil
+                                    repeats:YES];
     [AKManager startAndReturnError:NULL];
     [self.mic start];
     [self.tracker start];
+    [self listenToMic];
 }
 
 -(void)listenToMic{
     if(self.tracker.amplitude > 0.1){
         float n = 12*log2(self.tracker.frequency/16.35);
         self.percentage = 100*(n - round(n));
-        self.note = [self frequencyToNote:self.tracker.frequency];
+        self.note = [self frequencyToNote];
         [[NSNotificationCenter defaultCenter]
-                postNotificationName:@"UpdateGauge"
-                object:self];
+         postNotificationName:@"UpdateGauge"
+         object:self];
     }
-
+    
 }
 
 - (NSString *)frequencyToNote: (double)freq{
+    freq = self.tracker.frequency;
     if (freq >= 16.35){
         NSArray * notes_array = @[@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",@"A",@"A#",@"B"];
         // 16.35 = frequency of C0
