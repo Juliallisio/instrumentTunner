@@ -22,11 +22,8 @@
 
 /* Begin PBXBuildFile section */
 		32B9F516574A5D306795B949 /* Pods_instrumentTunner_instrumentTunnerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9C330CA6316D1C56679010 /* Pods_instrumentTunner_instrumentTunnerUITests.framework */; };
-		478A5FBD25F3E5BD0042588F /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A5FBC25F3E5BD0042588F /* File.swift */; };
 		478C994B25F3DD580004B04E /* AudioKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994925F3DD580004B04E /* AudioKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		478C995025F3DD790004B04E /* AudioKitUI.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 478C994E25F3DD790004B04E /* AudioKitUI.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		47C89AE625F66D28006974AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A5FBC25F3E5BD0042588F /* File.swift */; };
-		47C89AE925F66D2E006974AA /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 478A5FBC25F3E5BD0042588F /* File.swift */; };
 		47D64DD725F2A193005E976D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DD625F2A193005E976D /* AppDelegate.m */; };
 		47D64DDA25F2A193005E976D /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DD925F2A193005E976D /* SceneDelegate.m */; };
 		47D64DDD25F2A193005E976D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47D64DDC25F2A193005E976D /* ViewController.m */; };
@@ -77,8 +74,6 @@
 		2434D67D2F4FE3418BF8D509 /* Pods-instrumentTunnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instrumentTunnerTests.release.xcconfig"; path = "Target Support Files/Pods-instrumentTunnerTests/Pods-instrumentTunnerTests.release.xcconfig"; sourceTree = "<group>"; };
 		2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_instrumentTunnerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4700B1A225F3E08D00DCBAF5 /* instrumentTunner */ = {isa = PBXFileReference; lastKnownFileType = folder; path = instrumentTunner; sourceTree = "<group>"; };
-		478A5FBB25F3E5BD0042588F /* instrumentTunner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "instrumentTunner-Bridging-Header.h"; sourceTree = "<group>"; };
-		478A5FBC25F3E5BD0042588F /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		478C993025F3CEC00004B04E /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AudioKit; path = Pods/AudioKit; sourceTree = "<group>"; };
 		478C993125F3CEFD0004B04E /* AudioKit */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = AudioKit; path = "Pods/AudioKit/AudioKit.xcframework/macos-x86_64/AudioKit.framework/Versions/A/AudioKit"; sourceTree = "<group>"; };
 		478C993225F3CFA90004B04E /* AudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioKit.framework; path = "Pods/AudioKit/AudioKit.xcframework/macos-x86_64/AudioKit.framework"; sourceTree = "<group>"; };
@@ -147,14 +142,12 @@
 		47D64DC925F2A193005E976D = {
 			isa = PBXGroup;
 			children = (
-				478A5FBC25F3E5BD0042588F /* File.swift */,
 				47D64DD425F2A193005E976D /* instrumentTunner */,
 				47D64DF025F2A194005E976D /* instrumentTunnerTests */,
 				47D64DFB25F2A194005E976D /* instrumentTunnerUITests */,
 				47D64DD325F2A193005E976D /* Products */,
 				87FE08A4E4A0CDF065E8BE6E /* Pods */,
 				8D6BEFB81AEA2973790A9DED /* Frameworks */,
-				478A5FBB25F3E5BD0042588F /* instrumentTunner-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -175,13 +168,10 @@
 				47D64DD625F2A193005E976D /* AppDelegate.m */,
 				47D64DD825F2A193005E976D /* SceneDelegate.h */,
 				47D64DD925F2A193005E976D /* SceneDelegate.m */,
-				47D64DDB25F2A193005E976D /* ViewController.h */,
-				47D64DDC25F2A193005E976D /* ViewController.m */,
-				47D64DDE25F2A193005E976D /* Main.storyboard */,
+				B94ECEA627E8C29900A03D4F /* Controller */,
+				B94ECEA727E8C2B500A03D4F /* View */,
 				47D64DE125F2A194005E976D /* Assets.xcassets */,
-				47D64E1625F2A51E005E976D /* audioAnalyzer.m */,
-				47D64E0D25F2A29D005E976D /* audioAnalyzer.h */,
-				47D64DE325F2A194005E976D /* LaunchScreen.storyboard */,
+				B94ECEA827E8C2CC00A03D4F /* Models */,
 				47D64DE625F2A194005E976D /* Info.plist */,
 				47D64DE725F2A194005E976D /* main.m */,
 			);
@@ -236,6 +226,33 @@
 				2B2E0C53B54F350788AB0DAB /* Pods_instrumentTunnerTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B94ECEA627E8C29900A03D4F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				47D64DDB25F2A193005E976D /* ViewController.h */,
+				47D64DDC25F2A193005E976D /* ViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B94ECEA727E8C2B500A03D4F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				47D64DDE25F2A193005E976D /* Main.storyboard */,
+				47D64DE325F2A194005E976D /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B94ECEA827E8C2CC00A03D4F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				47D64E1625F2A51E005E976D /* audioAnalyzer.m */,
+				47D64E0D25F2A29D005E976D /* audioAnalyzer.h */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -463,7 +480,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				47D64DDD25F2A193005E976D /* ViewController.m in Sources */,
-				478A5FBD25F3E5BD0042588F /* File.swift in Sources */,
 				47D64DD725F2A193005E976D /* AppDelegate.m in Sources */,
 				47D64E1725F2A51E005E976D /* audioAnalyzer.m in Sources */,
 				47D64DE825F2A194005E976D /* main.m in Sources */,
@@ -475,7 +491,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47C89AE625F66D28006974AA /* File.swift in Sources */,
 				47D64DF225F2A194005E976D /* instrumentTunnerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -484,7 +499,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47C89AE925F66D2E006974AA /* File.swift in Sources */,
 				47D64DFD25F2A194005E976D /* instrumentTunnerUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -722,7 +736,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = BD9878378522843E9D4C9319 /* Pods-instrumentTunnerTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 765BB9ZL75;
@@ -745,7 +758,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2434D67D2F4FE3418BF8D509 /* Pods-instrumentTunnerTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 765BB9ZL75;
@@ -768,7 +780,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51AE93CC877E3E61B8ECDF11 /* Pods-instrumentTunner-instrumentTunnerUITests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 765BB9ZL75;
 				INFOPLIST_FILE = instrumentTunnerUITests/Info.plist;
@@ -789,7 +800,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E3540630AA1CCBD1F404CBFF /* Pods-instrumentTunner-instrumentTunnerUITests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 765BB9ZL75;
 				INFOPLIST_FILE = instrumentTunnerUITests/Info.plist;

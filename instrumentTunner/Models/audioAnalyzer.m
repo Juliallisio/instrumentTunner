@@ -17,6 +17,9 @@
 @implementation AudioAnalyzer
 
 -(id)init{
+    if (self != nil) {
+        [self deinit];
+    }
     
     self.listen = TRUE;
     AVAudioFormat *newFormat = [[AVAudioFormat alloc]initStandardFormatWithSampleRate:[[AVAudioSession sharedInstance]sampleRate] channels:1];

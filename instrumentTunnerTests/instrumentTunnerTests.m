@@ -7,7 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import <AudioKit/AudioKit.h>
-#import "../instrumentTunner/audioAnalyzer.h"
+#import "../instrumentTunner/Models/audioAnalyzer.h"
 
 @interface instrumentTunnerTests : XCTestCase
 
