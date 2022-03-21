@@ -36,10 +36,10 @@
 -(void) askPermissionToUseTheMic{
     switch ([[AVAudioSession sharedInstance] recordPermission]) {
         case AVAudioSessionRecordPermissionGranted:
-            self.audio = [[AudioAnalyzer alloc] init];
-            break;
+            if (self.audio == nil){
+                self.audio = [[AudioAnalyzer alloc] init];
+            }
         case AVAudioSessionRecordPermissionDenied:
-
             break;
         case AVAudioSessionRecordPermissionUndetermined:
             [[AVAudioSession sharedInstance] requestRecordPermission:^(BOOL granted) {

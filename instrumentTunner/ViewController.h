@@ -6,7 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "AudioAnalyzer.h"
+#import "audioAnalyzer.h"
 #import <AVFoundation/AVFAudio.h>
 
 @interface ViewController : UIViewController

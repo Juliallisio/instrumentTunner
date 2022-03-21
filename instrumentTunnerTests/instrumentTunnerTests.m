@@ -7,7 +7,7 @@
 
 #import <XCTest/XCTest.h>
 #import <AudioKit/AudioKit.h>
-#import "../instrumentTunner/AudioAnalyzer.h"
+#import "../instrumentTunner/audioAnalyzer.h"
 
 @interface instrumentTunnerTests : XCTestCase
 
@@ -17,13 +17,14 @@
 
 @implementation instrumentTunnerTests
 
+
 - (void) setUp {
-    //self.audio = [[AudioAnalyzer alloc] init];
+    self.audio = [[AudioAnalyzer alloc] init];
 }
 
 
 - (void)tearDown {
-    //self.audio = [[AudioAnalyzer alloc] deinit];
+    self.audio = [[AudioAnalyzer alloc] deinit];
 }
 
 - (void)testTones {

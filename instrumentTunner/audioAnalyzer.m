@@ -5,7 +5,7 @@
 //  Created by Julian Allisio on 05/03/2021.
 //
 
-#import "AudioAnalyzer.h"
+#import "audioAnalyzer.h"
 #import <AudioKit/AudioKit.h>
 #import <AVFoundation/AVFoundation.h>
 #import <math.h>
@@ -58,7 +58,7 @@
     if(self.tracker.amplitude > 0.1){
         float n = 12*log2(self.tracker.frequency/16.35);
         self.percentage = 100*(n - round(n));
-        self.note = [self frequencyToNote];
+        self.note = [self frequencyToNote:self.tracker.frequency];
         [[NSNotificationCenter defaultCenter]
          postNotificationName:@"UpdateGauge"
          object:self];
@@ -67,7 +67,6 @@
 }
 
 - (NSString *)frequencyToNote: (double)freq{
-    freq = self.tracker.frequency;
     if (freq >= 16.35){
         NSArray * notes_array = @[@"C",@"C#",@"D",@"D#",@"E",@"F",@"F#",@"G",@"G#",@"A",@"A#",@"B"];
         // 16.35 = frequency of C0
